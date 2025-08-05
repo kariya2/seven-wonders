@@ -1,9 +1,9 @@
 {
   "*.{js,jsx,ts,tsx}": [
-    "eslint --fix",
-    "prettier --write"
+    "pnpm exec eslint --fix",
+    "pnpm exec prettier --write"
   ],
   "*.{json,md,yml,yaml}": [
-    "prettier --write"
+    "pnpm exec prettier --write"
   ]
 }
