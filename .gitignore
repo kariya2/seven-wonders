@@ -39,4 +39,13 @@ Thumbs.db
 # Test coverage
 coverage/
 *.lcov
+
+# Next.js
 .next
+next-env.d.ts
+
+# Turbo
+.turbo
+
+# TypeScript
+*.tsbuildinfo
