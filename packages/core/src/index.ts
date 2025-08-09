@@ -37,4 +37,3 @@ export type {
   CardTemplate,
   PlayerCount,
 } from '@seven-wonders/shared';
-// test

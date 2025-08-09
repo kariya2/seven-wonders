@@ -9,7 +9,6 @@ export default [
       '**/.next/**',
       '**/coverage/**',
       '**/*.d.ts',
-      'packages/*/src/**/*.js', // Ignore build artifacts in src
     ],
   },
   {
@@ -19,11 +18,13 @@ export default [
       ecmaVersion: 2020,
       sourceType: 'module',
       parserOptions: {
-        project: './tsconfig.json',
+        ecmaVersion: 2020,
+        sourceType: 'module',
       },
     },
   },
   {
+    // Scripts are allowed to be JS
     files: ['scripts/**/*.js'],
     languageOptions: {
       ecmaVersion: 2020,
