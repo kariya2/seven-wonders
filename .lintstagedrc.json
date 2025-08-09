@@ -1,6 +1,12 @@
 {
-  "apps/**/*.{js,jsx,ts,tsx}": ["prettier --write"],
-  "packages/**/*.{js,jsx,ts,tsx}": ["prettier --write"],
+  "apps/**/*.{js,jsx,ts,tsx}": [
+    "eslint --config eslint.config.mjs --fix",
+    "prettier --write"
+  ],
+  "packages/**/*.{js,jsx,ts,tsx}": [
+    "eslint --config eslint.config.mjs --fix",
+    "prettier --write"
+  ],
   "*.{json,md,yml,yaml}": ["prettier --write"],
   "*.config.{js,ts}": ["prettier --write"]
 }
