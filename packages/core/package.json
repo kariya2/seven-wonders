@@ -7,12 +7,20 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
     "lint": "eslint . --max-warnings 0",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "cli": "tsx src/cli/index.ts"
   },
   "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@vitest/coverage-v8": "^3.2.4",
+    "eslint": "^9.15.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
     "typescript": "^5.7.2",
-    "eslint": "^9.15.0"
+    "vitest": "^3.2.4"
   },
   "dependencies": {
     "@seven-wonders/shared": "workspace:*"

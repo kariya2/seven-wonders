@@ -1,56 +1,39 @@
-export interface Action {
-  type: string;
-  payload?: any;
-}
+// State types
+export * from './state/types';
+export * from './state/reducer';
 
-export interface Rule {
-  condition: (state: any) => boolean;
-  action: Action;
-  priority?: number;
-}
+// Action types
+export * from './actions/types';
 
-export interface RulesEngine {
-  rules: Rule[];
-  addRule: (rule: Rule) => void;
-  removeRule: (index: number) => void;
-  evaluate: (state: any) => Action[];
-}
+// Wonder data
+export * from './wonders/types';
+export * from './wonders/wonderData';
 
-export function createRulesEngine(): RulesEngine {
-  const rules: Rule[] = [];
+// Resource calculation
+export * from './resources/calculator';
 
-  return {
-    rules,
-    addRule: (rule: Rule) => {
-      rules.push(rule);
-      rules.sort((a, b) => (b.priority || 0) - (a.priority || 0));
-    },
-    removeRule: (index: number) => {
-      rules.splice(index, 1);
-    },
-    evaluate: (state: any) => {
-      return rules
-        .filter(rule => rule.condition(state))
-        .map(rule => rule.action);
-    }
-  };
-}
+// Payment validation
+export * from './payment/validator';
 
-export function applyAction(state: any, action: Action): any {
-  switch (action.type) {
-    case 'SET_PROPERTY':
-      return {
-        ...state,
-        [action.payload.key]: action.payload.value
-      };
-    case 'INCREMENT':
-      return {
-        ...state,
-        [action.payload.key]: (state[action.payload.key] || 0) + (action.payload.amount || 1)
-      };
-    case 'RESET':
-      return action.payload.initialState || {};
-    default:
-      return state;
-  }
-}
+// Scoring
+export * from './scoring/calculator';
+
+// Game engine
+export * from './engine/gameEngine';
+
+// Re-export shared types and utilities
+export {
+  buildDeck,
+  dealCards,
+  cardService,
+  Age,
+  CardType,
+  ResourceType,
+  ScienceSymbol,
+} from '@seven-wonders/shared';
+
+export type {
+  CardInstance,
+  CardTemplate,
+  PlayerCount,
+} from '@seven-wonders/shared';

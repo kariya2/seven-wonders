@@ -49,3 +49,15 @@ next-env.d.ts
 
 # TypeScript
 *.tsbuildinfo
+
+# Build artifacts in source directories
+packages/*/src/**/*.js
+packages/*/src/**/*.js.map
+packages/*/src/**/*.d.ts
+packages/*/src/**/*.d.ts.map
+
+# Temporary test files
+test.json
+test-diff.txt
+*.test.js
+debug-*.js
